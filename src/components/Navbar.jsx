@@ -22,6 +22,9 @@ function Navbar() {
             <div>
                 <ul className="menu menu-horizontal ">
                     <li>
+                        <a onClick={() => nevigate("/player")}>Player</a>
+                    </li>
+                    <li>
                         <a onClick={() => nevigate("/album")}>Album</a>
                     </li>
                     <li>

@@ -17,9 +17,10 @@ function NowPlayingBar() {
     let [isShow, setIsShow] = useState(true);
     return (
         <div
-            className={`bg-base-300 fixed inset-x-0 bottom-0 transition ease-in duration-300 ${
+            className={`container mx-auto w-auto rounded-box bg-base-300 fixed inset-x-0 bottom-0 transition ease-in duration-300 ${
                 isShow ? "translate-y-none" : "translate-y-full"
             }`}>
+            {/* 재생바 */}
             <div>
                 <input
                     type="range"
@@ -30,19 +31,24 @@ function NowPlayingBar() {
                     className="range range-xs"
                 />
             </div>
-            <div className="bg-base-300 flex px-4 pt-2 pb-4 h-28">
-                <div className="flex-auto flex items-center justify-evenly">
+            {/* 정보 바 */}
+            <div className="container mx-auto grid grid-cols-3 lg:grid-cols-5 px-4 pt-2 pb-4 h-28">
+                {/* 앨범아트 + 제목 */}
+                <div className="grid grid-cols-2">
+                    {/* 앨범아트 */}
                     <div className="rounded-box bg-base-100 h-24 w-24 grid items-center place-items-center">
                         <Icon path={mdiAlbum} size={3} />
                     </div>
+                    {/* 제목 + 아티스트 */}
                     <div className="flex-col flex-auto flex items-center justify-evenly font-semibold">
                         <p>Title</p>
                         <p>Artist</p>
                     </div>
                 </div>
-
-                <div className="divider divider-horizontal"></div>
-                <div className="flex-auto flex items-center justify-evenly">
+                {/* 구분선 */}
+                {/* <div className="divider divider-horizontal"></div> */}
+                {/* 재생컨트롤 버튼 바 */}
+                <div className="container mx-auto flex justify-center lg:col-span-3 my-auto">
                     <button className="btn btn-ghost">
                         <Icon path={mdiSkipPrevious} size={1} />
                     </button>
@@ -58,10 +64,12 @@ function NowPlayingBar() {
                     <button className="btn btn-ghost">
                         <Icon path={mdiSkipNext} size={1} />
                     </button>
-                    <p>1:40 / 3:34</p>
+                    <p className="my-auto">1:40 / 3:44</p>
                 </div>
-                <div className="divider divider-horizontal"></div>
-                <div className="flex-auto flex items-center justify-evenly">
+                {/* 구분선 */}
+                {/* <div className="divider divider-horizontal justify-self-end" /> */}
+                {/* 재생 메뉴 바 */}
+                <div className="container grid grid-cols-4 mx-auto my-auto justify-self-end">
                     <button className="btn btn-ghost">
                         <Icon path={mdiRepeat} size={1} />
                     </button>
