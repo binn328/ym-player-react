@@ -20,7 +20,10 @@ function ThemeControllButton() {
 
     return (
         <>
-            <button data-toggle-theme="dark,light" onClick={handleThemeChange} className="">
+            <button
+                data-toggle-theme="dark,light"
+                onClick={handleThemeChange}
+                className="theme-controller">
                 {theme === "dark" ? (
                     <Icon path={mdiWeatherNight} size={1} />
                 ) : (

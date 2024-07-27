@@ -3,9 +3,13 @@ import Navbar from "./components/Navbar";
 import { Routes, Route } from "react-router-dom";
 import NowPlayingBar from "./components/NowPlayingBar";
 import AlbumPage from "./routes/AlbumPage";
-import Player from "./routes/Player";
+import Player from "./components/Player";
+import Playbar from "./components/PlayerMenuParts/PlayBar";
+import { toggleIsPlay } from "./store/player";
+import { useDispatch } from "react-redux";
 
 function App() {
+    let dispatch = useDispatch();
     return (
         <>
             <Navbar />
@@ -28,7 +32,7 @@ function App() {
                         </div>
                     }
                 />
-                <Route path="/playlist" element={<div>재생목록</div>} />
+                <Route path="/playlist" element={<div></div>} />
                 <Route path="/download" element={<div>다운로드</div>} />
             </Routes>
             <NowPlayingBar />

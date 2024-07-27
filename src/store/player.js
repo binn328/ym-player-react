@@ -2,10 +2,11 @@ import { createSlice } from "@reduxjs/toolkit";
 
 let player = createSlice({
     name: "player",
-    initialState: { isPlay: false },
+    initialState: { isPlay: true },
     reducers: {
         toggleIsPlay(state) {
-            return !isPlay;
+            console.log(state);
+            return !state;
         },
     },
 });
