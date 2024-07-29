@@ -7,6 +7,7 @@ import Player from "./components/Player";
 import Playbar from "./components/PlayerMenuParts/PlayBar";
 import { toggleIsPlay } from "./store/player";
 import { useDispatch } from "react-redux";
+import Settings from "./routes/Settings";
 
 function App() {
     let dispatch = useDispatch();
@@ -34,6 +35,7 @@ function App() {
                 />
                 <Route path="/playlist" element={<div></div>} />
                 <Route path="/download" element={<div>다운로드</div>} />
+                <Route path="/settings" element={<Settings />} />
             </Routes>
             <NowPlayingBar />
         </>

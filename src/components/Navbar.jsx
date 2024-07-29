@@ -2,6 +2,7 @@ import Icon from "@mdi/react";
 import { mdiMenu, mdiDotsHorizontal } from "@mdi/js";
 import ThemeControllButton from "./ThemeControllButton";
 import { useNavigate } from "react-router-dom";
+import DropdownMenuButton from "./ButtonParts/DropdownMenuButton";
 
 function Navbar() {
     let nevigate = useNavigate();
@@ -31,9 +32,10 @@ function Navbar() {
                 </ul>
             </div>
             <div className="flex-none">
-                <button className="btn btn-square btn-ghost">
+                {/* <button className="btn btn-square btn-ghost">
                     <Icon path={mdiDotsHorizontal} size={1} />
-                </button>
+                </button> */}
+                <DropdownMenuButton />
             </div>
         </div>
     );
